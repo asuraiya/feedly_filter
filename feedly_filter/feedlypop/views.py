@@ -1,5 +1,8 @@
-from django.http import HttpResponse
-
+from django.shortcuts import render
+import requests
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the feedlypop index.")
+    context = {
+        'stories': [1,2,3]
+    }
+    return render(request, "feedlypop/index.html", context)
